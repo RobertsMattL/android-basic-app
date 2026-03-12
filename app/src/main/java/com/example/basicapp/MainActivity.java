@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -19,11 +20,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.preference.PreferenceManager;
+<<<<<<< HEAD
 import com.example.basicapp.data.local.LocationDatabase;
 import com.example.basicapp.data.local.entity.LocationEntity;
 import com.google.android.material.button.MaterialButton;
+=======
+import android.widget.FrameLayout;
+>>>>>>> 31d76f3731acb72877aea3daab8a8dc1f40cfec8
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -46,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
     private Marker myLocationMarker;
+    private FrameLayout fragmentContainer;
+    private ConstraintLayout mainContent;
 
     private MaterialButton btnTrackGps;
     private boolean isTracking = false;
@@ -81,6 +89,9 @@ public class MainActivity extends AppCompatActivity implements
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
+        fragmentContainer = findViewById(R.id.fragmentContainer);
+        mainContent = findViewById(R.id.mainContent);
 
         // Set up the Map
         mapView = findViewById(R.id.mapFragment);
@@ -332,9 +343,14 @@ public class MainActivity extends AppCompatActivity implements
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
+            showMainContent();
         } else if (id == R.id.nav_map) {
-            Toast.makeText(this, "Map selected", Toast.LENGTH_SHORT).show();
+            showMainContent();
+        } else if (id == R.id.nav_contacts) {
+            showFragment(new ContactsFragment());
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle("Contacts");
+            }
         } else if (id == R.id.nav_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
         } else if (id == R.id.nav_about) {
@@ -343,6 +359,28 @@ public class MainActivity extends AppCompatActivity implements
 
         drawerLayout.closeDrawers();
         return true;
+    }
+
+    private void showFragment(androidx.fragment.app.Fragment fragment) {
+        mainContent.setVisibility(View.GONE);
+        fragmentContainer.setVisibility(View.VISIBLE);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .commit();
+    }
+
+    private void showMainContent() {
+        fragmentContainer.setVisibility(View.GONE);
+        mainContent.setVisibility(View.VISIBLE);
+        // Remove any fragment
+        androidx.fragment.app.Fragment current =
+                getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
+        if (current != null) {
+            getSupportFragmentManager().beginTransaction().remove(current).commit();
+        }
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.app_name);
+        }
     }
 
     @Override
