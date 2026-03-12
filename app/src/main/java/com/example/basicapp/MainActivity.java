@@ -25,6 +25,7 @@ import com.example.basicapp.data.local.LocationDatabase;
 import com.example.basicapp.data.local.entity.LocationEntity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -131,6 +132,26 @@ public class MainActivity extends AppCompatActivity implements
 
         // Set the adapter to the ListView
         listView.setAdapter(adapter);
+
+        // Set up the bottom navigation
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.bottom_home) {
+                Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
+                return true;
+            } else if (id == R.id.bottom_map) {
+                startActivity(new Intent(this, MapActivity.class));
+                return true;
+            } else if (id == R.id.bottom_settings) {
+                startActivity(new Intent(this, SettingsActivity.class));
+                return true;
+            } else if (id == R.id.bottom_about) {
+                startActivity(new Intent(this, AboutActivity.class));
+                return true;
+            }
+            return false;
+        });
     }
 
     private void toggleGpsTracking() {
