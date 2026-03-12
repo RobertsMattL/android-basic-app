@@ -1,5 +1,6 @@
 package com.example.basicapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
-            Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         } else if (id == R.id.action_refresh) {
             Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
