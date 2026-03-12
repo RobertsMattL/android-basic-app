@@ -22,9 +22,8 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp" />
 
-        <fragment
+        <org.osmdroid.views.MapView
             android:id="@+id/mapFragment"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="0dp"
             android:layout_height="300dp"
             android:layout_marginTop="16dp"

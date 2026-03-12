@@ -11,23 +11,25 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.navigation.NavigationView;
+import org.osmdroid.config.Configuration;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,
+public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
-    private GoogleMap mMap;
+    private MapView mapView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Configuration.getInstance().setUserAgentValue(getPackageName());
+
         setContentView(R.layout.activity_main);
 
         // Set up the navigation drawer
@@ -45,11 +47,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         // Set up the Map
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.mapFragment);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        }
+        mapView = findViewById(R.id.mapFragment);
+        mapView.setTileSource(TileSourceFactory.USGS_SAT);
+        mapView.setMultiTouchControls(true);
+        mapView.getController().setZoom(10.0);
+
+        GeoPoint sydney = new GeoPoint(-34.0, 151.0);
+        mapView.getController().setCenter(sydney);
+
+        Marker marker = new Marker(mapView);
+        marker.setPosition(sydney);
+        marker.setTitle("Marker in Sydney");
+        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        mapView.getOverlays().add(marker);
 
         // Set up the ListView
         ListView listView = findViewById(R.id.listView);
@@ -129,12 +139,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+    protected void onResume() {
+        super.onResume();
+        mapView.onResume();
+    }
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 10));
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mapView.onPause();
     }
 }
