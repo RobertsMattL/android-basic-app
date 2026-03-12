@@ -6,20 +6,42 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,
+        NavigationView.OnNavigationItemSelectedListener {
     private GoogleMap mMap;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle toggle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Set up the navigation drawer
+        drawerLayout = findViewById(R.id.drawerLayout);
+        NavigationView navigationView = findViewById(R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, R.string.nav_open, R.string.nav_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         // Set up the Map
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -64,6 +86,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
@@ -81,6 +107,24 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.nav_home) {
+            Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_map) {
+            Toast.makeText(this, "Map selected", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_settings) {
+            Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_about) {
+            Toast.makeText(this, "About selected", Toast.LENGTH_SHORT).show();
+        }
+
+        drawerLayout.closeDrawers();
+        return true;
     }
 
     @Override
