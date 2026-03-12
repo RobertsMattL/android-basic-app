@@ -3,6 +3,7 @@ package com.example.basicapp;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -20,6 +21,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.preference.PreferenceManager;
+import com.example.basicapp.data.local.LocationDatabase;
+import com.example.basicapp.data.local.entity.LocationEntity;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import org.osmdroid.config.Configuration;
@@ -27,15 +31,27 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.Polyline;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
     private static final int LOCATION_PERMISSION_REQUEST = 1001;
+    private static final long TRACKING_MIN_TIME_MS = 3000;
+    private static final float TRACKING_MIN_DISTANCE_M = 5f;
 
     private MapView mapView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
     private Marker myLocationMarker;
+
+    private MaterialButton btnTrackGps;
+    private boolean isTracking = false;
+    private LocationManager locationManager;
+    private Polyline trackingPolyline;
+    private List<GeoPoint> trackingPoints = new ArrayList<>();
+    private LocationListener trackingLocationListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +100,11 @@ public class MainActivity extends AppCompatActivity implements
         FloatingActionButton fabMyLocation = findViewById(R.id.fabMyLocation);
         fabMyLocation.setOnClickListener(v -> goToMyLocation());
 
+        // Set up GPS tracking button
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        btnTrackGps = findViewById(R.id.btnTrackGps);
+        btnTrackGps.setOnClickListener(v -> toggleGpsTracking());
+
         // Set up the ListView
         ListView listView = findViewById(R.id.listView);
 
@@ -112,6 +133,86 @@ public class MainActivity extends AppCompatActivity implements
         listView.setAdapter(adapter);
     }
 
+    private void toggleGpsTracking() {
+        if (isTracking) {
+            stopTracking();
+        } else {
+            startTracking();
+        }
+    }
+
+    private void startTracking() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    LOCATION_PERMISSION_REQUEST);
+            return;
+        }
+
+        isTracking = true;
+        btnTrackGps.setText(R.string.stop_tracking);
+        btnTrackGps.setIconResource(android.R.drawable.ic_media_pause);
+
+        trackingPoints.clear();
+        trackingPolyline = new Polyline();
+        trackingPolyline.getOutlinePaint().setColor(Color.RED);
+        trackingPolyline.getOutlinePaint().setStrokeWidth(8f);
+        mapView.getOverlays().add(trackingPolyline);
+
+        trackingLocationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(@NonNull Location location) {
+                GeoPoint point = new GeoPoint(location.getLatitude(), location.getLongitude());
+                trackingPoints.add(point);
+                trackingPolyline.setPoints(trackingPoints);
+                mapView.getController().animateTo(point);
+                mapView.invalidate();
+
+                // Save to database in background
+                new Thread(() -> {
+                    LocationEntity entity = new LocationEntity(
+                            "Track Point",
+                            location.getLatitude(),
+                            location.getLongitude(),
+                            "GPS tracking session",
+                            System.currentTimeMillis()
+                    );
+                    LocationDatabase.getInstance(MainActivity.this)
+                            .locationDao().insert(entity);
+                }).start();
+            }
+
+            @Override
+            public void onProviderDisabled(@NonNull String provider) {
+                Toast.makeText(MainActivity.this,
+                        "GPS disabled — tracking stopped", Toast.LENGTH_SHORT).show();
+                stopTracking();
+            }
+        };
+
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+                TRACKING_MIN_TIME_MS, TRACKING_MIN_DISTANCE_M, trackingLocationListener);
+
+        Toast.makeText(this, "GPS tracking started", Toast.LENGTH_SHORT).show();
+    }
+
+    private void stopTracking() {
+        isTracking = false;
+        btnTrackGps.setText(R.string.start_tracking);
+        btnTrackGps.setIconResource(android.R.drawable.ic_menu_mylocation);
+
+        if (trackingLocationListener != null) {
+            locationManager.removeUpdates(trackingLocationListener);
+            trackingLocationListener = null;
+        }
+
+        int pointCount = trackingPoints.size();
+        Toast.makeText(this,
+                "Tracking stopped — " + pointCount + " points recorded",
+                Toast.LENGTH_SHORT).show();
+    }
+
     private void goToMyLocation() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -121,7 +222,6 @@ public class MainActivity extends AppCompatActivity implements
             return;
         }
 
-        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         Location lastKnown = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if (lastKnown == null) {
             lastKnown = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -233,6 +333,9 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onPause() {
         super.onPause();
+        if (isTracking) {
+            stopTracking();
+        }
         mapView.onPause();
     }
 }
