@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements
             Toast.makeText(this, "Search clicked", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_about) {
-            Toast.makeText(this, "About clicked", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, AboutActivity.class));
             return true;
         }
 
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements
         } else if (id == R.id.nav_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
         } else if (id == R.id.nav_about) {
-            Toast.makeText(this, "About selected", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, AboutActivity.class));
         }
 
         drawerLayout.closeDrawers();
