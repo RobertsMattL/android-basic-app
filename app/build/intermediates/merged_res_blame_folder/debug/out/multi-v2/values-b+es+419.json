@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.example.basicapp-mergeDebugResources-43:/values-b+es+419/values-b+es+419.xml",
+=======
+            "outputFile": "com.example.basicapp-mergeDebugResources-41:/values-b+es+419/values-b+es+419.xml",
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
             "map": [
                 {
                     "source": "/Users/matthewroberts/.gradle/caches/transforms-3/74a2558674f6dcad48a387d806131537/transformed/material-1.11.0/res/values-b+es+419/values-b+es+419.xml",

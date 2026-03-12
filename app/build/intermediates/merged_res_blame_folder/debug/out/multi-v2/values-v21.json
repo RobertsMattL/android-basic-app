@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.example.basicapp-mergeDebugResources-43:/values-v21/values-v21.xml",
+=======
+            "outputFile": "com.example.basicapp-mergeDebugResources-41:/values-v21/values-v21.xml",
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
             "map": [
                 {
                     "source": "/Users/matthewroberts/.gradle/caches/transforms-3/f0f4ee7c3b88100b2d2cd4b05ab423cd/transformed/core-1.9.0/res/values-v21/values-v21.xml",

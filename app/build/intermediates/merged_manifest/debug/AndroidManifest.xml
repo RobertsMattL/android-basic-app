@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+<<<<<<< HEAD
     <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -24,6 +25,25 @@
         <!-- Needs to be explicitly declared on Android R+ -->
         <package android:name="com.google.android.apps.maps" />
     </queries>
+=======
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 
     <permission
         android:name="com.example.basicapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -53,15 +73,22 @@
         <activity
             android:name="com.example.basicapp.SettingsActivity"
             android:exported="false" />
+<<<<<<< HEAD
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+=======
+        <activity
+            android:name="com.example.basicapp.AboutActivity"
+            android:exported="false" />
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
             android:exported="false" />
+<<<<<<< HEAD
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
@@ -71,6 +98,8 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+=======
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 
         <provider
             android:name="androidx.startup.InitializationProvider"

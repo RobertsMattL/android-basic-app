@@ -3,70 +3,69 @@ package com.example.basicapp;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import org.osmdroid.config.Configuration;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
-    private GoogleMap mMap;
+public class MapActivity extends AppCompatActivity {
+    private MapView mapView;
     private FloatingActionButton fabZoomIn, fabZoomOut, fabLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Configuration.getInstance().setUserAgentValue(getPackageName());
+
         setContentView(R.layout.activity_map);
 
-        // Enable back button in action bar
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Map");
         }
 
-        // Initialize FABs
+        mapView = findViewById(R.id.map);
+        mapView.setTileSource(TileSourceFactory.USGS_SAT);
+        mapView.setMultiTouchControls(true);
+        mapView.getController().setZoom(12.0);
+
+        GeoPoint defaultLocation = new GeoPoint(37.7749, -122.4194);
+        mapView.getController().setCenter(defaultLocation);
+
+        Marker marker = new Marker(mapView);
+        marker.setPosition(defaultLocation);
+        marker.setTitle("Marker in San Francisco");
+        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        mapView.getOverlays().add(marker);
+
         fabZoomIn = findViewById(R.id.fab_zoom_in);
         fabZoomOut = findViewById(R.id.fab_zoom_out);
         fabLocation = findViewById(R.id.fab_location);
 
-        // Set up FAB click listeners
         fabZoomIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mMap != null) {
-                    mMap.animateCamera(CameraUpdateFactory.zoomIn());
-                }
+                mapView.getController().zoomIn();
             }
         });
 
         fabZoomOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mMap != null) {
-                    mMap.animateCamera(CameraUpdateFactory.zoomOut());
-                }
+                mapView.getController().zoomOut();
             }
         });
 
         fabLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mMap != null) {
-                    // Return to default location (San Francisco)
-                    LatLng defaultLocation = new LatLng(37.7749, -122.4194);
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 12));
-                }
+                GeoPoint defaultLoc = new GeoPoint(37.7749, -122.4194);
+                mapView.getController().animateTo(defaultLoc, 12.0, null);
             }
         });
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        }
     }
 
     @Override
@@ -76,18 +75,14 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+    protected void onResume() {
+        super.onResume();
+        mapView.onResume();
+    }
 
-        // Add a marker at a default location (San Francisco) and move the camera
-        LatLng defaultLocation = new LatLng(37.7749, -122.4194);
-        mMap.addMarker(new MarkerOptions()
-                .position(defaultLocation)
-                .title("Marker in San Francisco"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 12));
-
-        // Enable zoom controls
-        mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.getUiSettings().setCompassEnabled(true);
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mapView.onPause();
     }
 }

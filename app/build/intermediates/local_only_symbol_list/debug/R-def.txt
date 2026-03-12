@@ -5,6 +5,8 @@ array map_type_values
 array zoom_level_entries
 array zoom_level_values
 color black
+color blue_500
+color blue_700
 color purple_200
 color purple_500
 color purple_700
@@ -16,6 +18,10 @@ id action_refresh
 id action_search
 id action_settings
 id drawerLayout
+<<<<<<< HEAD
+=======
+id fabMyLocation
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 id fab_location
 id fab_zoom_in
 id fab_zoom_out
@@ -29,6 +35,7 @@ id nav_settings
 id navigationView
 id settings_container
 id textView
+layout activity_about
 layout activity_main
 layout activity_map
 layout activity_settings

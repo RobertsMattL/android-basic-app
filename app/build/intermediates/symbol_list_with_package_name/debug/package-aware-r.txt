@@ -137,7 +137,10 @@ attr alpha
 attr alphabeticModifiers
 attr altSrc
 attr alwaysExpand
+<<<<<<< HEAD
 attr ambientEnabled
+=======
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 attr animateCircleAngleTo
 attr animateMenuItems
 attr animateNavigationIcon
@@ -1390,7 +1393,10 @@ attr useCompatPadding
 attr useDrawerArrowDrawable
 attr useMaterialThemeColors
 attr useSimpleSummaryProvider
+<<<<<<< HEAD
 attr useViewLifecycle
+=======
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 attr values
 attr verticalOffset
 attr verticalOffsetWithText
@@ -1461,6 +1467,8 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue_500
+color blue_700
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -3098,14 +3106,17 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bonuspack_bubble
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
 drawable btn_checkbox_unchecked_to_checked_mtrl_animation
+drawable btn_moreinfo
 drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+<<<<<<< HEAD
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3125,6 +3136,9 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+=======
+drawable center
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3140,6 +3154,10 @@ drawable ic_keyboard_black_24dp
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
+drawable ic_menu_compass
+drawable ic_menu_mapmode
+drawable ic_menu_mylocation
+drawable ic_menu_offline
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -3156,6 +3174,8 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable marker_default
+drawable marker_default_focused_base
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -3166,6 +3186,8 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable moreinfo_arrow
+drawable moreinfo_arrow_pressed
 drawable mtrl_bottomsheet_drag_handle
 drawable mtrl_checkbox_button
 drawable mtrl_checkbox_button_checked_unchecked
@@ -3204,6 +3226,8 @@ drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable navto_small
+drawable next
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -3216,10 +3240,26 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+<<<<<<< HEAD
 drawable preference_list_divider_material
+=======
+drawable osm_ic_center_map
+drawable osm_ic_follow_me
+drawable osm_ic_follow_me_on
+drawable osm_ic_ic_map_ortho
+drawable person
+drawable preference_list_divider_material
+drawable previous
+drawable round_navigation_white_48
+drawable sharp_add_black_36
+drawable sharp_remove_black_36
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable twotone_navigation_black_48
+drawable zoom_in
+drawable zoom_out
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3325,6 +3365,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id bubble_description
+id bubble_image
+id bubble_moreinfo
+id bubble_subdescription
+id bubble_title
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3410,6 +3455,10 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+<<<<<<< HEAD
+=======
+id fabMyLocation
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 id fab_location
 id fab_zoom_in
 id fab_zoom_out
@@ -3615,7 +3664,10 @@ id right_side
 id rounded
 id row_index_key
 id rtl
+<<<<<<< HEAD
 id satellite
+=======
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3871,9 +3923,14 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_about
 layout activity_main
 layout activity_map
 layout activity_settings
+<<<<<<< HEAD
+=======
+layout bonuspack_bubble
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -4002,19 +4059,35 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string about
+string about_message
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
+string base
+string base_nl
+string bing
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
 string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string cacheManagerCancelBody
+string cacheManagerCancelTitle
+string cacheManagerCleanFailed
+string cacheManagerCleaningTitle
+string cacheManagerDownloadingTitle
+string cacheManagerFailed
+string cacheManagerHandlingMessage
+string cacheManagerNo
+string cacheManagerUnsupportedSource
+string cacheManagerYes
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+<<<<<<< HEAD
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -4034,14 +4107,33 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy
+=======
+string compass
+string copy
+string cyclemap
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 string error_a11y_label
 string error_icon_content_description
 string expand_button_title
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fiets_nl
+string first_fix_message
+string format_distance_feet
+string format_distance_kilometers
+string format_distance_meters
+string format_distance_miles
+string format_distance_nautical_miles
+string format_distance_only_foot
+string format_distance_only_kilometer
+string format_distance_only_meter
+string format_distance_only_mile
+string format_distance_only_nautical_mile
+string format_distance_value_unit
 string hello_world
 string hide_bottom_view_on_scroll_behavior
+string hills
 string icon_content_description
 string item_view_role_description
 string m3_exceed_max_badge_text_suffix
@@ -4060,6 +4152,11 @@ string m3_sys_motion_easing_linear
 string m3_sys_motion_easing_standard
 string m3_sys_motion_easing_standard_accelerate
 string m3_sys_motion_easing_standard_decelerate
+string map_mode
+string mapbox
+string mapnik
+string mapquest_aerial
+string mapquest_osm
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_24h_suffix
@@ -4144,23 +4241,48 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+<<<<<<< HEAD
 string nav_close
 string nav_open
 string not_set
+=======
+string my_location
+string nav_close
+string nav_open
+string not_set
+string offline
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string preference_copied
+<<<<<<< HEAD
+=======
+string public_transport
+string roads_nl
+string samples
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
+string set_mode_hide_me
+string set_mode_offline
+string set_mode_online
+string set_mode_show_me
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
+string snapshot
+string states
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
+<<<<<<< HEAD
+=======
+string topo
+string unknown
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 string v7_preference_off
 string v7_preference_on
 style AlertDialog_AppCompat
@@ -5395,8 +5517,11 @@ styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width 
 styleable LinearProgressIndicator indeterminateAnimationType indicatorDirectionLinear
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable ListPreference android_entries android_entryValues entries entryValues useSimpleSummaryProvider
+<<<<<<< HEAD
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
 styleable MapAttrs ambientEnabled backgroundColor cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapId mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
+=======
+>>>>>>> 58acc7e884aea67768fe0a40fe588118caf8b3d9
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop backgroundTint
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogButtonSpacerVisibility materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialAutoCompleteTextView android_inputType android_popupElevation dropDownBackgroundTint simpleItemLayout simpleItemSelectedColor simpleItemSelectedRippleColor simpleItems
