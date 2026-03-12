@@ -37,10 +37,10 @@ com.example.basicapp-sqlite-2.4.0-35 /Users/matthewroberts/.gradle/caches/transf
 com.example.basicapp-jetified-appcompat-resources-1.6.1-36 /Users/matthewroberts/.gradle/caches/transforms-3/eb005582472c4060f015437e9d5a5229/transformed/jetified-appcompat-resources-1.6.1/res
 com.example.basicapp-core-1.9.0-37 /Users/matthewroberts/.gradle/caches/transforms-3/f0f4ee7c3b88100b2d2cd4b05ab423cd/transformed/core-1.9.0/res
 com.example.basicapp-jetified-lifecycle-process-2.6.1-38 /Users/matthewroberts/.gradle/caches/transforms-3/f41bcf8a8e0d9819e753268d38a40d88/transformed/jetified-lifecycle-process-2.6.1/res
-com.example.basicapp-pngs-39 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/build/generated/res/pngs/debug
-com.example.basicapp-resValues-40 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/build/generated/res/resValues/debug
-com.example.basicapp-packageDebugResources-41 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.example.basicapp-packageDebugResources-42 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.example.basicapp-merged_res-43 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/build/intermediates/merged_res/debug
-com.example.basicapp-debug-44 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/debug/res
-com.example.basicapp-main-45 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/res
+com.example.basicapp-pngs-39 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/build/generated/res/pngs/debug
+com.example.basicapp-resValues-40 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/build/generated/res/resValues/debug
+com.example.basicapp-packageDebugResources-41 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.basicapp-packageDebugResources-42 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.basicapp-merged_res-43 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/build/intermediates/merged_res/debug
+com.example.basicapp-debug-44 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/debug/res
+com.example.basicapp-main-45 /Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/res

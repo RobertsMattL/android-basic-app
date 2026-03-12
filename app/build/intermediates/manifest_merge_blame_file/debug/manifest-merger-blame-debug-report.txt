@@ -9,14 +9,14 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:4:5-67
-11-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:4:22-64
+11-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:4:5-67
+11-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:4:22-64
 12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-12-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:5:5-79
-12-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:5:22-76
+12-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:5:5-79
+12-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:5:22-76
 13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-13-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:6:5-81
-13-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:6:22-78
+13-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:6:5-81
+13-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:6:22-78
 14
 15    <supports-screens
 15-->[org.osmdroid:osmdroid-android:6.1.18] /Users/matthewroberts/.gradle/caches/transforms-3/0b7eecfb9742c60228239b899b74e6ad/transformed/jetified-osmdroid-android-6.1.18/AndroidManifest.xml:9:5-12:40
@@ -64,52 +64,52 @@
 37-->[androidx.core:core:1.9.0] /Users/matthewroberts/.gradle/caches/transforms-3/f0f4ee7c3b88100b2d2cd4b05ab423cd/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 38
 39    <application
-39-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:8:5-29:19
+39-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:8:5-29:19
 40        android:allowBackup="true"
-40-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:9:9-35
+40-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:9:9-35
 41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 41-->[androidx.core:core:1.9.0] /Users/matthewroberts/.gradle/caches/transforms-3/f0f4ee7c3b88100b2d2cd4b05ab423cd/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 42        android:debuggable="true"
 43        android:extractNativeLibs="false"
 44        android:icon="@mipmap/ic_launcher"
-44-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:10:9-43
+44-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:10:9-43
 45        android:label="@string/app_name"
-45-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:11:9-41
+45-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:11:9-41
 46        android:roundIcon="@mipmap/ic_launcher_round"
-46-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:12:9-54
+46-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:12:9-54
 47        android:supportsRtl="true"
-47-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:13:9-35
+47-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:13:9-35
 48        android:theme="@style/Theme.BasicApp" >
-48-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:14:9-46
+48-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:14:9-46
 49        <activity
-49-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:15:9-22:20
+49-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:15:9-22:20
 50            android:name="com.example.basicapp.MainActivity"
-50-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:16:13-41
+50-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:16:13-41
 51            android:exported="true" >
-51-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:17:13-36
+51-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:17:13-36
 52            <intent-filter>
-52-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:18:13-21:29
+52-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:18:13-21:29
 53                <action android:name="android.intent.action.MAIN" />
-53-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:19:17-69
-53-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:19:25-66
+53-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:19:17-69
+53-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:19:25-66
 54
 55                <category android:name="android.intent.category.LAUNCHER" />
-55-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:20:17-77
-55-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:20:27-74
+55-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:20:17-77
+55-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:20:27-74
 56            </intent-filter>
 57        </activity>
 58        <activity
-58-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:23:9-25:40
+58-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:23:9-25:40
 59            android:name="com.example.basicapp.SettingsActivity"
-59-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:24:13-45
+59-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:24:13-45
 60            android:exported="false" />
-60-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:25:13-37
+60-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:25:13-37
 61        <activity
-61-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:26:9-28:40
+61-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:26:9-28:40
 62            android:name="com.example.basicapp.AboutActivity"
-62-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:27:13-42
+62-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:27:13-42
 63            android:exported="false" />
-63-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/AndroidManifest.xml:28:13-37
+63-->/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/AndroidManifest.xml:28:13-37
 64
 65        <service
 65-->[androidx.room:room-runtime:2.6.1] /Users/matthewroberts/.gradle/caches/transforms-3/2c5ddfa82d9e551fe5b89586e1bcabc6/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63

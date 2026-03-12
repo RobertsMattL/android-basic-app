@@ -4,23 +4,6 @@
             "outputFile": "com.example.basicapp-mergeDebugResources-41:/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "2,3,5,4",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,101,214,154",
-                        "endColumns": "45,52,61,59",
-                        "endOffsets": "96,149,271,209"
-                    },
-                    "to": {
-                        "startLines": "2022,2071,2188,2189",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "132669,136859,153146,153208",
-                        "endColumns": "45,52,61,59",
-                        "endOffsets": "132710,136907,153203,153263"
-                    }
-                },
-                {
                     "source": "/Users/matthewroberts/.gradle/caches/transforms-3/37ee88d4b7a97fb082b40d115818e861/transformed/transition-1.4.1/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
@@ -95,23 +78,6 @@
                     }
                 },
                 {
-                    "source": "/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/res/values/colors.xml",
-                    "from": {
-                        "startLines": "9,5,6,2,3,4,7,8,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "376,196,241,55,102,149,286,331,418",
-                        "endColumns": "41,44,44,46,46,46,44,44,41",
-                        "endOffsets": "413,236,281,97,144,191,326,371,455"
-                    },
-                    "to": {
-                        "startLines": "673,674,675,981,982,983,994,995,998",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "33912,33954,33999,56798,56845,56892,57636,57681,57847",
-                        "endColumns": "41,44,44,46,46,46,44,44,41",
-                        "endOffsets": "33949,33994,34039,56840,56887,56934,57676,57721,57884"
-                    }
-                },
-                {
                     "source": "/Users/matthewroberts/.gradle/caches/transforms-3/f0f4ee7c3b88100b2d2cd4b05ab423cd/transformed/core-1.9.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,89,90,94,95,96,97,103,113,146,167,200",
@@ -145,25 +111,6 @@
                         "startOffsets": "132446,132486,132865,132913,132974,134101,134192,134264,134351,134421,134496,134578,134680,134726,134839,135264,135346,136078,136138,136202,136257,136318,136374,136430,136495,136552,136614,136671,136728,136794,137065,139235,139283,139325,139388,139448,153094,153312,154303,154365,154428,155033,155105,155170,155233,155667,155713,155965,156010",
                         "endColumns": "39,99,47,60,37,90,71,86,69,74,81,101,45,112,47,43,46,59,63,54,60,55,55,64,56,61,56,56,65,64,39,47,41,62,59,49,51,48,61,62,43,71,64,62,85,45,41,44,43",
                         "endOffsets": "132481,132581,132908,132969,133007,134187,134259,134346,134416,134491,134573,134675,134721,134834,134882,135303,135388,136133,136197,136252,136313,136369,136425,136490,136547,136609,136666,136723,136789,136854,137100,139278,139320,139383,139443,139493,153141,153356,154360,154423,154467,155100,155165,155228,155314,155708,155750,156005,156049"
-                    }
-                },
-                {
-                    "source": "/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/res/values/arrays.xml",
-                    "from": {
-                        "startLines": "2,9,16,23",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,235,414,605",
-                        "endLines": "7,14,21,28",
-                        "endColumns": "19,19,19,19",
-                        "endOffsets": "229,408,599,758"
-                    },
-                    "to": {
-                        "startLines": "2,8,14,20",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "150,329,507,697",
-                        "endLines": "7,13,19,25",
-                        "endColumns": "19,19,19,19",
-                        "endOffsets": "324,502,692,850"
                     }
                 },
                 {
@@ -202,25 +149,6 @@
                         "endLines": "14084",
                         "endColumns": "24",
                         "endOffsets": "821868"
-                    }
-                },
-                {
-                    "source": "/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a2/app/src/main/res/values/themes.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "139",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "788"
-                    },
-                    "to": {
-                        "startLines": "6629",
-                        "startColumns": "4",
-                        "startOffsets": "459711",
-                        "endLines": "6640",
-                        "endColumns": "12",
-                        "endOffsets": "460274"
                     }
                 },
                 {
@@ -300,6 +228,23 @@
                     }
                 },
                 {
+                    "source": "/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/res/values/colors.xml",
+                    "from": {
+                        "startLines": "9,5,6,2,3,4,7,8,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "376,196,241,55,102,149,286,331,418",
+                        "endColumns": "41,44,44,46,46,46,44,44,41",
+                        "endOffsets": "413,236,281,97,144,191,326,371,455"
+                    },
+                    "to": {
+                        "startLines": "673,674,675,981,982,983,994,995,998",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "33912,33954,33999,56798,56845,56892,57636,57681,57847",
+                        "endColumns": "41,44,44,46,46,46,44,44,41",
+                        "endOffsets": "33949,33994,34039,56840,56887,56934,57676,57721,57884"
+                    }
+                },
+                {
                     "source": "/Users/matthewroberts/.gradle/caches/transforms-3/8422318e41995a931fb6933fb2e0a4a3/transformed/jetified-startup-runtime-1.1.1/res/values/values.xml",
                     "from": {
                         "startLines": "2",
@@ -314,6 +259,23 @@
                         "startOffsets": "132586",
                         "endColumns": "82",
                         "endOffsets": "132664"
+                    }
+                },
+                {
+                    "source": "/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2,3,5,4",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,101,214,154",
+                        "endColumns": "45,52,61,59",
+                        "endOffsets": "96,149,271,209"
+                    },
+                    "to": {
+                        "startLines": "2022,2071,2188,2189",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "132669,136859,153146,153208",
+                        "endColumns": "45,52,61,59",
+                        "endOffsets": "132710,136907,153203,153263"
                     }
                 },
                 {
@@ -420,6 +382,44 @@
                         "endLines": "556,557,558,559,1843,9545,9549,13320,13332,13340",
                         "endColumns": "11,59,51,44,59,24,24,24,24,24",
                         "endOffsets": "27705,27765,27817,27862,121790,654723,654854,793248,793688,793997"
+                    }
+                },
+                {
+                    "source": "/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/res/values/themes.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "139",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "788"
+                    },
+                    "to": {
+                        "startLines": "6629",
+                        "startColumns": "4",
+                        "startOffsets": "459711",
+                        "endLines": "6640",
+                        "endColumns": "12",
+                        "endOffsets": "460274"
+                    }
+                },
+                {
+                    "source": "/Users/matthewroberts/Library/Application Support/parallelagents-boss-node/repos/a1/app/src/main/res/values/arrays.xml",
+                    "from": {
+                        "startLines": "2,9,16,23",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,235,414,605",
+                        "endLines": "7,14,21,28",
+                        "endColumns": "19,19,19,19",
+                        "endOffsets": "229,408,599,758"
+                    },
+                    "to": {
+                        "startLines": "2,8,14,20",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "150,329,507,697",
+                        "endLines": "7,13,19,25",
+                        "endColumns": "19,19,19,19",
+                        "endOffsets": "324,502,692,850"
                     }
                 },
                 {
