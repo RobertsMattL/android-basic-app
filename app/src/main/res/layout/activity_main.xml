@@ -51,6 +51,17 @@
             app:layout_constraintEnd_toEndOf="@id/mapFragment"
             app:fabSize="mini" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabLayers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="Map layers"
+            android:src="@android:drawable/ic_menu_mapmode"
+            app:layout_constraintBottom_toTopOf="@id/fabMyLocation"
+            app:layout_constraintEnd_toEndOf="@id/mapFragment"
+            app:fabSize="mini" />
+
         <ListView
             android:id="@+id/listView"
             android:layout_width="0dp"

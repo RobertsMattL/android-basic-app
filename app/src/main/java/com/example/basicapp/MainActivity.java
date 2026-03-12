@@ -27,6 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import org.osmdroid.config.Configuration;
+import org.osmdroid.tileprovider.tilesource.ITileSource;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -42,6 +43,14 @@ public class MainActivity extends AppCompatActivity implements
     private Marker myLocationMarker;
     private FrameLayout fragmentContainer;
     private ConstraintLayout mainContent;
+    private int currentTileSourceIndex = 0;
+    private final ITileSource[] tileSources = {
+            TileSourceFactory.USGS_SAT,
+            TileSourceFactory.MAPNIK,
+            TileSourceFactory.OpenTopo
+    };
+    private final String[] tileSourceNames = {"Satellite", "Street", "Topo"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +101,14 @@ public class MainActivity extends AppCompatActivity implements
         // Set up the current location FAB
         FloatingActionButton fabMyLocation = findViewById(R.id.fabMyLocation);
         fabMyLocation.setOnClickListener(v -> goToMyLocation());
+
+        // Set up the layers FAB
+        FloatingActionButton fabLayers = findViewById(R.id.fabLayers);
+        fabLayers.setOnClickListener(v -> {
+            currentTileSourceIndex = (currentTileSourceIndex + 1) % tileSources.length;
+            mapView.setTileSource(tileSources[currentTileSourceIndex]);
+            Toast.makeText(this, tileSourceNames[currentTileSourceIndex], Toast.LENGTH_SHORT).show();
+        });
 
         // Set up the ListView
         ListView listView = findViewById(R.id.listView);
