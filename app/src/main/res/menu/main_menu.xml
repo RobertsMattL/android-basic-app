@@ -26,4 +26,10 @@
         android:icon="@android:drawable/ic_menu_info_details"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_test_crash"
+        android:title="Test Crash"
+        android:icon="@android:drawable/ic_delete"
+        app:showAsAction="never" />
+
 </menu>
