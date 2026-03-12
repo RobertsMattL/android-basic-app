@@ -347,6 +347,8 @@ public class MainActivity extends AppCompatActivity implements
         } else if (id == R.id.action_about) {
             startActivity(new Intent(this, AboutActivity.class));
             return true;
+        } else if (id == R.id.action_test_crash) {
+            throw new RuntimeException("Test crash triggered from menu");
         }
 
         return super.onOptionsItemSelected(item);
