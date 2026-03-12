@@ -7,14 +7,18 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.basicapp.data.local.dao.LocationDao;
+import com.example.basicapp.data.local.dao.WorkspaceDao;
 import com.example.basicapp.data.local.entity.LocationEntity;
+import com.example.basicapp.data.local.entity.WorkspaceEntity;
 
-@Database(entities = {LocationEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {LocationEntity.class, WorkspaceEntity.class}, version = 2, exportSchema = false)
 public abstract class LocationDatabase extends RoomDatabase {
 
     private static volatile LocationDatabase INSTANCE;
 
     public abstract LocationDao locationDao();
+
+    public abstract WorkspaceDao workspaceDao();
 
     public static LocationDatabase getInstance(Context context) {
         if (INSTANCE == null) {
