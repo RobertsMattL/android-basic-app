@@ -23,17 +23,15 @@ import androidx.core.content.ContextCompat;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.preference.PreferenceManager;
-<<<<<<< HEAD
+import android.widget.FrameLayout;
 import com.example.basicapp.data.local.LocationDatabase;
 import com.example.basicapp.data.local.entity.LocationEntity;
 import com.google.android.material.button.MaterialButton;
-=======
-import android.widget.FrameLayout;
->>>>>>> 31d76f3731acb72877aea3daab8a8dc1f40cfec8
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import org.osmdroid.config.Configuration;
+import org.osmdroid.tileprovider.tilesource.ITileSource;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -54,6 +52,14 @@ public class MainActivity extends AppCompatActivity implements
     private Marker myLocationMarker;
     private FrameLayout fragmentContainer;
     private ConstraintLayout mainContent;
+    private int currentTileSourceIndex = 0;
+    private final ITileSource[] tileSources = {
+            TileSourceFactory.USGS_SAT,
+            TileSourceFactory.MAPNIK,
+            TileSourceFactory.OpenTopo
+    };
+    private final String[] tileSourceNames = {"Satellite", "Street", "Topo"};
+
 
     private MaterialButton btnTrackGps;
     private boolean isTracking = false;
@@ -116,6 +122,14 @@ public class MainActivity extends AppCompatActivity implements
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         btnTrackGps = findViewById(R.id.btnTrackGps);
         btnTrackGps.setOnClickListener(v -> toggleGpsTracking());
+
+        // Set up the layers FAB
+        FloatingActionButton fabLayers = findViewById(R.id.fabLayers);
+        fabLayers.setOnClickListener(v -> {
+            currentTileSourceIndex = (currentTileSourceIndex + 1) % tileSources.length;
+            mapView.setTileSource(tileSources[currentTileSourceIndex]);
+            Toast.makeText(this, tileSourceNames[currentTileSourceIndex], Toast.LENGTH_SHORT).show();
+        });
 
         // Set up the ListView
         ListView listView = findViewById(R.id.listView);

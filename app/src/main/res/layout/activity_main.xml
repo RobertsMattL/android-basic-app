@@ -51,6 +51,17 @@
             app:layout_constraintEnd_toEndOf="@id/mapFragment"
             app:fabSize="mini" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabLayers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="Map layers"
+            android:src="@android:drawable/ic_menu_mapmode"
+            app:layout_constraintBottom_toTopOf="@id/fabMyLocation"
+            app:layout_constraintEnd_toEndOf="@id/mapFragment"
+            app:fabSize="mini" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnTrackGps"
             android:layout_width="0dp"
@@ -69,13 +80,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
-<<<<<<< HEAD
             app:layout_constraintTop_toBottomOf="@id/btnTrackGps"
-            app:layout_constraintBottom_toBottomOf="parent"
-=======
-            app:layout_constraintTop_toBottomOf="@id/mapFragment"
             app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
->>>>>>> 95756e5d9af991703ecd3edf5510e6e4d16eeec3
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="16dp"
