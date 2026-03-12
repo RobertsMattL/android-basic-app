@@ -10,7 +10,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.preference.PreferenceManager;
 import com.google.android.material.navigation.NavigationView;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -26,6 +28,12 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Apply saved dark mode preference before setting content view
+        boolean darkMode = PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean("dark_mode", false);
+        AppCompatDelegate.setDefaultNightMode(
+                darkMode ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
+
         super.onCreate(savedInstanceState);
 
         Configuration.getInstance().setUserAgentValue(getPackageName());
@@ -129,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements
         } else if (id == R.id.nav_map) {
             Toast.makeText(this, "Map selected", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_settings) {
-            Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, SettingsActivity.class));
         } else if (id == R.id.nav_about) {
             Toast.makeText(this, "About selected", Toast.LENGTH_SHORT).show();
         }

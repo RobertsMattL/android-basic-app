@@ -2,7 +2,9 @@ package com.example.basicapp;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SwitchPreferenceCompat;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -34,6 +36,17 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.preferences, rootKey);
+
+            SwitchPreferenceCompat darkModePref = findPreference("dark_mode");
+            if (darkModePref != null) {
+                darkModePref.setOnPreferenceChangeListener((preference, newValue) -> {
+                    boolean enabled = (Boolean) newValue;
+                    AppCompatDelegate.setDefaultNightMode(
+                            enabled ? AppCompatDelegate.MODE_NIGHT_YES
+                                    : AppCompatDelegate.MODE_NIGHT_NO);
+                    return true;
+                });
+            }
         }
     }
 }
