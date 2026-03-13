@@ -8,6 +8,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,6 +44,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "MainActivity";
     private static final int LOCATION_PERMISSION_REQUEST = 1001;
     private static final long TRACKING_MIN_TIME_MS = 3000;
     private static final float TRACKING_MIN_DISTANCE_M = 5f;
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate: MainActivity starting");
+
         // Apply saved dark mode preference before setting content view
         boolean darkMode = PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean("dark_mode", false);
