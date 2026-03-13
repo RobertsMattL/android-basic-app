@@ -8,6 +8,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,6 +44,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "MainActivity";
     private static final int LOCATION_PERMISSION_REQUEST = 1001;
     private static final long TRACKING_MIN_TIME_MS = 3000;
     private static final float TRACKING_MIN_DISTANCE_M = 5f;
@@ -78,6 +80,8 @@ public class MainActivity extends AppCompatActivity implements
                 darkMode ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
 
         super.onCreate(savedInstanceState);
+
+        Log.d(TAG, "Test log: MainActivity onCreate called");
 
         Configuration.getInstance().setUserAgentValue(getPackageName());
 
