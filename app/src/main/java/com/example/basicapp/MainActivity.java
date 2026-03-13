@@ -74,7 +74,11 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate: MainActivity starting");
+<<<<<<< HEAD
         Log.d(TAG, "onCreate: Test log added");
+=======
+        Log.d(TAG, "onCreate: Test log message");
+>>>>>>> 3a20c02766f04668ab094f874bf5521e27847277
 
         // Apply saved dark mode preference before setting content view
         boolean darkMode = PreferenceManager.getDefaultSharedPreferences(this)
@@ -83,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements
                 darkMode ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
 
         super.onCreate(savedInstanceState);
+
+        Log.d(TAG, "Test log: MainActivity onCreate called");
+        Log.i(TAG, "Test log added to MainActivity");
 
         Configuration.getInstance().setUserAgentValue(getPackageName());
 
