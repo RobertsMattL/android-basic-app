@@ -44,6 +44,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "MainActivity";
     private static final int LOCATION_PERMISSION_REQUEST = 1001;
     private static final long TRACKING_MIN_TIME_MS = 3000;
     private static final float TRACKING_MIN_DISTANCE_M = 5f;
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("MainActivity", "onCreate: Activity started");
+        Log.d(TAG, "onCreate: MainActivity starting");
 
         // Apply saved dark mode preference before setting content view
         boolean darkMode = PreferenceManager.getDefaultSharedPreferences(this)
