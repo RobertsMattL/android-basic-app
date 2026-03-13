@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
 
         Log.d(TAG, "Test log: MainActivity onCreate called");
+        Log.i(TAG, "Test log added to MainActivity");
 
         Configuration.getInstance().setUserAgentValue(getPackageName());
 
